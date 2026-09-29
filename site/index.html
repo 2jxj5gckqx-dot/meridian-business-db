@@ -1,0 +1,253 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VAT Bridge · Mazalit</title>
+<meta name="description" content="VAT Bridge by Mazalit: an advance on the VAT refund the state owes your business.">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://2jxj5gckqx-dot.github.io/meridian-business-db/">
+<meta name="theme-color" content="#1E3050">
+<meta property="og:type" content="website"><meta property="og:site_name" content="VAT Bridge · Mazalit"><meta property="og:title" content="VAT Bridge · Your VAT refund, sooner"><meta property="og:description" content="MDPS, part of Mazalit, advances the VAT refund the state owes your business."><meta property="og:url" content="https://2jxj5gckqx-dot.github.io/meridian-business-db/"><meta property="og:image" content="https://2jxj5gckqx-dot.github.io/meridian-business-db/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--navy:#1E3050;--blue:#3F86E0;--sky:#8FC1FF;--ink:#14213A;--muted:#6B7280;--line:rgba(30,48,80,.14);--soft:#F3F6FB;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--soft);-webkit-font-smoothing:antialiased;overflow-x:clip;font-size:16px;line-height:1.5}
+a{color:inherit;text-decoration:none}p{margin:0}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.035em;line-height:1.04;color:var(--navy)}h1 em,h2 em{font-style:normal;color:var(--blue)}
+h1{font-size:clamp(40px,5.6vw,80px)}h2{font-size:clamp(32px,4.4vw,64px)}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+.num{font-variant-numeric:tabular-nums}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;background:var(--blue);color:#fff;border-radius:8px;padding:15px 22px 15px 24px;font-weight:600;font-size:14px;border:0;cursor:pointer;font-family:inherit;transition:transform .5s var(--ease),background .3s;will-change:transform}
+.btn:hover{background:#2F74CC}.btn.navy{background:var(--navy)}.btn.navy:hover{background:#16243D}
+.btn .arr{width:16px;height:16px;position:relative;overflow:hidden}.btn .arr svg{position:absolute;inset:0;width:16px;height:16px;transition:transform .45s var(--ease)}.btn .arr svg+svg{transform:translate(-120%,120%)}.btn:hover .arr svg{transform:translate(120%,-120%)}.btn:hover .arr svg+svg{transform:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,48px);transition:background .4s,box-shadow .4s;opacity:0;animation:fade 1s var(--ease) .2s forwards}
+.nav.solid{background:rgba(243,246,251,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+.logo{display:flex;align-items:center;gap:14px}.logo .lg{height:26px;width:auto}.by{display:flex;flex-direction:column;line-height:1.1;padding-left:14px;border-left:1px solid var(--line)}.by b{font-size:14px;font-weight:700}.by span{font-size:11px;color:var(--muted);white-space:nowrap}
+.nav .btn{padding:11px 16px 11px 18px;font-size:13px}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:51}
+
+/* the card */
+.stage{perspective:1400px;width:100%;max-width:540px}
+.card{position:relative;width:100%;aspect-ratio:540/336;border-radius:24px;background:linear-gradient(135deg,#27406A 0%,#1E3050 55%,#152540 100%);color:#fff;box-shadow:0 60px 100px -40px rgba(30,48,80,.7),inset 0 1px 0 rgba(255,255,255,.15);transform-style:preserve-3d;transition:transform .2s ease-out;overflow:hidden;will-change:transform}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.22) 45%,rgba(255,255,255,.05) 50%,transparent 60%);transform:translateX(-120%)}
+.card.shine::before{animation:shine 1.4s ease forwards}
+@keyframes shine{to{transform:translateX(120%)}}
+.glare{position:absolute;inset:0;background:radial-gradient(360px circle at var(--gx,30%) var(--gy,30%),rgba(255,255,255,.18),transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
+.card:hover .glare{opacity:1}
+.card .mk{position:absolute;right:6%;top:8%;height:13%;width:auto;transform:translateZ(30px)}.card .mk path[fill="#1E3050"]{fill:#fff}
+.card .t{position:absolute;left:6.6%;top:9.5%;font-size:clamp(9px,.85vw,12px);letter-spacing:.2em;text-transform:uppercase;color:var(--sky);font-weight:600}
+.card .n{position:absolute;left:6.6%;bottom:25%;font-size:clamp(26px,3vw,44px);font-weight:700;letter-spacing:-.02em;transform:translateZ(40px)}
+.card .f{position:absolute;left:6.6%;bottom:9.5%;font-size:clamp(8px,.8vw,11px);color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase}
+.card .lines{position:absolute;inset:0;width:100%;height:100%;opacity:.25}.card .lines path{fill:none;stroke:var(--sky);stroke-width:1}
+.card.fly{transform:rotateY(-40deg) rotateX(12deg) translateY(60px);opacity:0;animation:flyin 1.6s cubic-bezier(.22,1,.36,1) .5s forwards}
+@keyframes flyin{to{opacity:1;transform:none}}
+.orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(63,134,224,.18),transparent 60%);filter:blur(20px);animation:drift 12s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(80px,-60px)}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px clamp(20px,4vw,48px) 60px;max-width:1336px;margin:0 auto;overflow:visible}
+h1 .w{display:inline-block;opacity:0;transform:translateY(.5em) rotate(2deg);animation:rise 1s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}@keyframes fade{to{opacity:1}}
+.cta{opacity:0;animation:fade 1s var(--ease) 1.4s forwards;margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.amtin{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.amtin input{font:inherit;font-weight:700;font-variant-numeric:tabular-nums;color:var(--navy);width:120px;border:0;border-bottom:2px solid var(--line);background:transparent;padding:4px 0;font-size:15px;border-radius:0}.amtin input:focus{outline:none;border-color:var(--blue)}
+.hero .stage{justify-self:center}
+.scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:22px;height:36px;border:2px solid var(--line);border-radius:12px;opacity:0;animation:fade 1s ease 2s forwards}.scrollcue::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--blue);animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{50%{transform:translateY(12px);opacity:.3}}
+
+/* journey: the card travels through time as you scroll */
+.journey{position:relative;height:320svh}
+.journey .sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.journey h2{text-align:center;margin-bottom:8px}
+.journey .sub{text-align:center;color:var(--muted);font-size:clamp(15px,1.4vw,18px);min-height:1.6em;transition:opacity .4s}
+.track{position:relative;height:300px;margin-top:150px}
+.rail{position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(30,48,80,.12)}
+.railfill{position:absolute;left:0;top:50%;height:2px;width:0;background:var(--navy)}
+.railblue{position:absolute;top:calc(50% + 14px);height:3px;width:0;background:var(--blue);box-shadow:0 0 0 4px rgba(63,134,224,.12);left:22%}
+.stop{position:absolute;top:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:var(--soft);border:2px solid var(--navy);transition:background .3s,transform .3s}
+.stop.on{background:var(--navy);transform:translate(-50%,-50%) scale(1.3)}
+.stop.dash{border-style:dashed}
+.slab{position:absolute;top:calc(50% + 34px);transform:translateX(-50%);text-align:center;font-size:12px;color:var(--muted);white-space:nowrap;line-height:1.35}.slab b{display:block;color:var(--navy);font-size:13px;font-weight:600}
+.slab.blue b{color:var(--blue)}.slab.blue{opacity:0;transition:opacity .4s}.slab.blue.on{opacity:1}.slab.first{transform:none;text-align:left}.slab.last{transform:translateX(-100%);text-align:right}#lb{transform:none;text-align:left;padding-left:6px}
+.journey .mini{position:absolute;top:50%;left:0;width:300px;transform:translate(-50%,-50%) translateY(-120px);z-index:2}
+.journey .mini .stage{max-width:300px}.journey .mini .card{box-shadow:0 30px 60px -24px rgba(30,48,80,.6)}
+.badge{position:absolute;right:-10px;top:-14px;background:var(--blue);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:6px;transform:rotate(-4deg) scale(0);transition:transform .5s cubic-bezier(.2,1.4,.4,1);box-shadow:0 10px 24px -8px rgba(63,134,224,.8)}
+.badge.on{transform:rotate(-4deg) scale(1)}
+.dayc{position:absolute;left:0;top:-118px;text-align:left;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;}.dayc b{display:block;font-size:44px;letter-spacing:-.03em;color:var(--navy);font-weight:800;line-height:1}
+
+/* steps: four small cards flip in */
+.steps{padding:clamp(80px,10vw,140px) 0}
+.steps h2{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;perspective:1200px}
+.tile{background:#fff;border-radius:20px;padding:28px 26px 30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 1px 0 var(--line),0 30px 60px -40px rgba(30,48,80,.4);transform:rotateY(-30deg) translateY(30px);opacity:0;transition:transform 1s var(--ease),opacity 1s var(--ease),box-shadow .4s}
+.in .tile{transform:none;opacity:1}.in .tile:nth-child(2){transition-delay:.12s}.in .tile:nth-child(3){transition-delay:.24s}.in .tile:nth-child(4){transition-delay:.36s}
+.tile:hover{box-shadow:0 1px 0 var(--line),0 40px 70px -40px rgba(30,48,80,.6);transform:translateY(-6px)}
+.tile .k{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--muted)}
+.tile h3{font-size:clamp(18px,1.5vw,22px);font-weight:600;letter-spacing:-.02em;margin-top:14px}
+.tile .who{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px;background:var(--soft);color:var(--navy);margin-top:18px}
+.tile.us{background:linear-gradient(135deg,#27406A,#1E3050 60%,#152540);color:#fff}.tile.us h3,.tile.us .k{color:#fff}.tile.us .who{background:var(--blue);color:#fff}.tile.us .k{color:var(--sky)}
+.tile .ico{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center}.tile .ico svg{width:18px;height:18px;color:var(--navy)}.tile.us .ico{background:rgba(255,255,255,.12)}.tile.us .ico svg{color:#fff}
+.lender{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}.lender b{color:var(--navy)}
+
+/* request */
+.request{padding:clamp(60px,8vw,120px) 0 clamp(80px,10vw,140px)}
+.request .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:center}
+.request h2{margin-bottom:16px}.request .lead{color:var(--muted);font-size:17px}
+.request .stage{margin-top:40px;max-width:420px}
+.form{background:#fff;border-radius:24px;padding:clamp(22px,3vw,36px);box-shadow:0 1px 0 var(--line),0 40px 80px -50px rgba(30,48,80,.5);display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.form .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;font-weight:600;color:var(--navy)}
+input,textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--soft);border:1px solid transparent;border-radius:10px;padding:12px 14px;min-height:48px;transition:border-color .2s,background .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:none;background:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(63,134,224,.16)}
+.money{position:relative}.money::before{content:"₪";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)}.money input{padding-left:30px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted);line-height:1.45}.check input{width:16px;height:16px;min-height:0;margin-top:2px;padding:0;accent-color:var(--blue);flex:none}.check a{color:var(--blue)}
+.msg{font-size:14px}.msg:empty{display:none}.msg.ok{color:#1D7A3C}.msg.warn{color:#9A5B00}
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+
+/* faq */
+.faq{padding:0 0 clamp(80px,10vw,140px)}
+.faq .wrap{max-width:820px}.faq h2{text-align:center;margin-bottom:28px}
+details{background:#fff;border-radius:14px;padding:0 22px;margin-bottom:10px;box-shadow:0 1px 0 var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;font-weight:600;font-size:17px;color:var(--navy)}
+summary::-webkit-details-marker{display:none}summary svg{width:18px;height:18px;flex:none;color:var(--blue);transition:transform .4s var(--ease)}details[open] summary svg{transform:rotate(45deg)}
+details p{padding:0 0 20px;color:var(--muted);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:32px 0 44px;font-size:12px;color:var(--muted)}
+footer .lg{height:18px;width:auto;display:block;margin-bottom:16px}footer .warn{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:16px}
+footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:14px;border-top:1px solid var(--line)}footer a{color:var(--navy)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);filter:blur(6px);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+.in.rv,.in .rv{opacity:1;transform:none;filter:none}.in .rv:nth-child(2){transition-delay:.1s}.in .rv:nth-child(3){transition-delay:.2s}
+.pill{position:fixed;left:12px;right:12px;bottom:12px;z-index:45;display:none;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 18px;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 10px 40px -10px rgba(30,48,80,.4),0 0 0 1px var(--line);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);transform:translateY(140%);transition:transform .5s var(--ease)}
+.pill.on{transform:none}.pill .tt{font-size:11px;color:var(--muted);line-height:1.2}.pill .tt b{display:block;font-size:15px;color:var(--navy)}.pill .btn{padding:10px 14px 10px 16px;font-size:13px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition:none!important}.rv,.tile{opacity:1;transform:none;filter:none}}
+@media(max-width:1000px){.hero{grid-template-columns:1fr;gap:40px;padding-top:110px}.hero .stage{justify-self:start}.tiles{grid-template-columns:1fr 1fr}.request .grid{grid-template-columns:1fr}.request .stage{display:none}}
+@media(max-width:640px){.nav{height:64px}.logo .lg{height:20px}.by{padding-left:8px}.by b{font-size:12px}.by span{font-size:9px}.nav .btn .long{display:none}.nav .btn{padding:9px 12px 9px 14px}
+.card{width:100%}.card .n{font-size:26px}.tiles{grid-template-columns:1fr}.tile{min-height:0}.form{grid-template-columns:1fr}.pill{display:flex}body{padding-bottom:76px}
+.journey{height:260svh}.track{height:240px;margin-top:120px}.journey .mini{width:200px}.journey .mini .card{width:200px}.journey .mini{transform:translate(-50%,-50%) translateY(-92px)}#lb{left:44%!important}.slab.first{font-size:10px}.slab{font-size:10px}.slab b{font-size:11px}.slab.mid{display:none}.dayc{top:-100px}.dayc b{font-size:32px}.scrollcue{display:none}}
+.nav .btn .short{display:none}@media(max-width:640px){.nav .btn .short{display:inline}}
+</style></head><body>
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav"><a class="logo" href="#top"><svg class="lg" viewBox="0 0 505.3 100" role="img" aria-label="Mazalit"><g transform="translate(-197.25 -64.30) scale(0.9153)"><path fill="#1E3050" fill-rule="evenodd" d="M215.5 101.0 L261.5 147.8 L263.5 148.8 L270.5 141.0 L230.8 101.0 L248.5 82.0 L250.5 81.2 L336.5 81.2 L353.0 97.2 L367.0 97.8 L367.8 96.5 L341.2 70.5 L247.2 70.2 L243.2 71.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M242.5 100.5 L255.8 114.8 L293.0 151.8 L294.0 151.8 L344.5 101.0 L333.8 89.8 L254.0 89.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M368.0 104.2 L353.2 104.2 L293.8 164.0 L275.5 146.2 L267.8 153.8 L293.8 179.5Z"/></g><g transform="translate(-213.47 -326.54) scale(1.8560)"><path fill="#1E3050" fill-rule="evenodd" d="M201.0 188.0 L201.5 218.5 L208.2 218.5 L209.0 217.8 L208.8 200.0 L209.8 200.8 L215.8 218.5 L220.8 218.0 L226.0 201.2 L227.2 200.0 L227.0 218.0 L234.8 218.5 L234.5 187.5 L224.2 187.8 L218.2 206.5 L217.0 205.8 L211.5 187.8 L204.2 187.2Z"/><path fill="#1E3050" fill-rule="evenodd" d="M248.5 187.5 L237.2 218.5 L245.2 218.5 L247.8 213.2 L256.5 213.2 L258.8 218.2 L266.5 218.5 L266.5 216.5 L255.8 187.8Z M251.8 198.5 L253.0 199.8 L255.0 205.8 L254.2 207.0 L249.2 206.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M292.2 187.5 L268.2 188.0 L268.8 193.8 L281.2 193.8 L282.0 194.5 L268.2 215.0 L268.8 218.5 L292.5 218.2 L292.5 212.2 L279.8 212.2 L279.0 211.5 L292.5 191.8Z"/><path fill="#1E3050" fill-rule="evenodd" d="M305.5 187.5 L294.2 218.2 L302.0 218.5 L304.5 213.2 L313.2 213.2 L314.5 214.5 L315.5 218.2 L323.5 218.5 L323.5 216.5 L312.5 187.5Z M309.0 198.5 L311.8 205.5 L311.0 207.0 L307.0 207.0 L306.2 206.2 L307.8 200.2Z"/><path fill="#1E3050" fill-rule="evenodd" d="M326.5 187.5 L326.2 218.2 L346.5 218.5 L346.2 212.0 L334.0 211.5 L334.0 188.2 L333.5 187.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M356.2 187.2 L349.8 188.0 L350.0 218.5 L357.5 218.2 L357.5 188.0Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M361.5 187.5 L361.5 193.8 L369.2 193.8 L370.0 194.8 L370.2 218.2 L377.5 218.5 L377.8 194.8 L378.8 193.8 L386.8 193.8 L387.2 188.0Z"/></g></svg><span class="by"><b>VAT Bridge</b><span>by MDPS, part of Mazalit</span></span></a><a class="btn navy" href="#request"><span class="long">Request an advance</span><span class="short">Request</span><span class="arr"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></header>
+
+<main id="top">
+<section class="hero" id="hero"><div class="orb" style="right:8%;top:10%"></div>
+  <div><h1>Your refund,<br><em>on your account.</em></h1>
+    <div class="cta"><a class="btn" href="#request" id="heroCta">Request an advance<span class="arr"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><label class="amtin">The state owes you ₪<input id="amt" value="180,000" inputmode="numeric" aria-label="Your VAT refund"></label></div></div>
+  <div class="stage" id="stage"><div class="card fly" id="card"><svg class="lines" viewBox="0 0 540 336" preserveAspectRatio="none"><path d="M0 250 C120 200 220 320 340 260 S480 180 540 220"/><path d="M0 290 C140 240 240 340 360 290 S500 220 540 250"/></svg><div class="glare"></div><span class="t">VAT Bridge</span><svg class="mk" viewBox="0 0 152.5 109.2" aria-hidden="true"><g transform="translate(-215.50 -70.25) scale(1.0000)"><path fill="#1E3050" fill-rule="evenodd" d="M215.5 101.0 L261.5 147.8 L263.5 148.8 L270.5 141.0 L230.8 101.0 L248.5 82.0 L250.5 81.2 L336.5 81.2 L353.0 97.2 L367.0 97.8 L367.8 96.5 L341.2 70.5 L247.2 70.2 L243.2 71.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M242.5 100.5 L255.8 114.8 L293.0 151.8 L294.0 151.8 L344.5 101.0 L333.8 89.8 L254.0 89.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M368.0 104.2 L353.2 104.2 L293.8 164.0 L275.5 146.2 L267.8 153.8 L293.8 179.5Z"/></g></svg><span class="n num hookAmt">₪180,000</span><span class="f">Owed by the state · advanced by MDPS</span></div></div>
+  <div class="scrollcue" aria-hidden="true"></div>
+</section>
+
+<section class="journey" id="journey" aria-label="When the money arrives">
+  <div class="sticky"><div class="wrap">
+    <h2 id="jh">Filed on <em id="jFiled">15 September</em>.</h2>
+    <p class="sub" id="jsub">By law, the state pays between 15 October and 14 December.</p>
+    <div class="track" id="track">
+      <div class="dayc" id="dayc">Day<b id="dayn">0</b></div>
+      <div class="rail"></div><div class="railfill" id="railfill"></div><div class="railblue" id="railblue"></div>
+      <div class="stop on" style="left:22%" id="s0"></div><div class="slab first" style="left:22%"><b id="l0">15 Sep</b>You file</div>
+      <div class="stop" style="left:54%" id="s1"></div><div class="slab mid" style="left:54%"><b id="l1">15 Oct</b>30 days · the state pays</div>
+      <div class="stop dash" style="left:96%" id="s2"></div><div class="slab last" style="left:96%"><b id="l2">14 Dec</b>90 days · if they audit</div>
+      <div class="slab blue" style="left:30%;top:calc(50% + 34px)" id="lb"><b>With VAT Bridge</b>after approval</div>
+      <div class="mini" id="mini"><div class="stage"><div class="card " id="card2"><svg class="lines" viewBox="0 0 540 336" preserveAspectRatio="none"><path d="M0 250 C120 200 220 320 340 260 S480 180 540 220"/><path d="M0 290 C140 240 240 340 360 290 S500 220 540 250"/></svg><div class="glare"></div><span class="t">VAT Bridge</span><svg class="mk" viewBox="0 0 152.5 109.2" aria-hidden="true"><g transform="translate(-215.50 -70.25) scale(1.0000)"><path fill="#1E3050" fill-rule="evenodd" d="M215.5 101.0 L261.5 147.8 L263.5 148.8 L270.5 141.0 L230.8 101.0 L248.5 82.0 L250.5 81.2 L336.5 81.2 L353.0 97.2 L367.0 97.8 L367.8 96.5 L341.2 70.5 L247.2 70.2 L243.2 71.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M242.5 100.5 L255.8 114.8 L293.0 151.8 L294.0 151.8 L344.5 101.0 L333.8 89.8 L254.0 89.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M368.0 104.2 L353.2 104.2 L293.8 164.0 L275.5 146.2 L267.8 153.8 L293.8 179.5Z"/></g></svg><span class="n num hookAmt">₪180,000</span><span class="f">Owed by the state · advanced by MDPS</span></div></div><div class="badge" id="badge">Advanced by MDPS</div></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="steps" id="how"><div class="wrap">
+  <h2 class="rv">Four steps. You do <em>two.</em></h2>
+  <div class="tiles" id="tiles">
+    <div class="tile"><div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h6M9 16h6"/></svg></span><h3>You file your VAT return</h3></div><span class="who">You</span></div>
+    <div class="tile"><div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><h3>You send us a request</h3></div><span class="who">You</span></div>
+    <div class="tile us"><div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v10H3zM3 12h18"/></svg></span><h3>We check it and pay you</h3></div><span class="who">MDPS</span></div>
+    <div class="tile"><div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6M5 10v9M9 10v9M15 10v9M19 10v9M3 19h18"/></svg></span><h3>The state pays the refund, which repays MDPS</h3></div><span class="who">The state</span></div>
+  </div>
+  <p class="lender rv"><b>MDPS</b>, part of Mazalit, is licensed to provide credit by the Capital Market Authority.</p>
+</div></section>
+
+<section class="request" id="request"><div class="wrap grid">
+  <div class="in"><h2 class="rv">Request <em>an advance.</em></h2><p class="lead rv">An advisor will contact you.</p><div class="stage rv" id="stage3"><div class="card " id="card3"><svg class="lines" viewBox="0 0 540 336" preserveAspectRatio="none"><path d="M0 250 C120 200 220 320 340 260 S480 180 540 220"/><path d="M0 290 C140 240 240 340 360 290 S500 220 540 250"/></svg><div class="glare"></div><span class="t">VAT Bridge</span><svg class="mk" viewBox="0 0 152.5 109.2" aria-hidden="true"><g transform="translate(-215.50 -70.25) scale(1.0000)"><path fill="#1E3050" fill-rule="evenodd" d="M215.5 101.0 L261.5 147.8 L263.5 148.8 L270.5 141.0 L230.8 101.0 L248.5 82.0 L250.5 81.2 L336.5 81.2 L353.0 97.2 L367.0 97.8 L367.8 96.5 L341.2 70.5 L247.2 70.2 L243.2 71.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M242.5 100.5 L255.8 114.8 L293.0 151.8 L294.0 151.8 L344.5 101.0 L333.8 89.8 L254.0 89.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M368.0 104.2 L353.2 104.2 L293.8 164.0 L275.5 146.2 L267.8 153.8 L293.8 179.5Z"/></g></svg><span class="n num hookAmt">₪180,000</span><span class="f">Owed by the state · advanced by MDPS</span></div></div></div>
+  <!-- TODO before going live: connect the form to the address that receives requests (ENDPOINT in the script). -->
+  <form class="form rv" id="requestForm" novalidate method="post"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"><input type="hidden" name="_subject" value="VAT Bridge · new request"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+    <div class="field"><label for="f-company">Business name</label><input id="f-company" name="Business name" required autocomplete="organization"></div>
+    <div class="field"><label for="f-id">Company number</label><input id="f-id" name="Company number" required inputmode="numeric"></div>
+    <div class="field"><label for="f-name">Contact name</label><input id="f-name" name="Contact name" required autocomplete="name"></div>
+    <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" required autocomplete="tel"></div>
+    <div class="field"><label for="f-email">Email</label><input id="f-email" name="Email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="f-amount">Refund on your return (optional)</label><div class="money"><input id="f-amount" name="Refund on return" inputmode="numeric"></div></div>
+    <label class="check full"><input type="checkbox" id="f-consent" name="Consent" required><span>I agree that MDPS may contact me about my request, in line with the <a href="legal/privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+    <div class="actions full"><button class="btn" type="submit">Send request<span class="arr"><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><div class="msg" id="formMsg" role="status"></div></div>
+  </form>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap in">
+  <h2 class="rv">Before <em>you apply.</em></h2>
+  <div class="rv">
+    <details><summary>What is VAT Bridge?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></summary><p>An advance on the VAT refund the state owes your business, provided by MDPS.</p></details>
+    <details><summary>What do I need?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></summary><p>Your latest VAT return and your business details.</p></details>
+    <details><summary>Does it change my VAT reporting?<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></summary><p>No. You keep filing as usual.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><svg class="lg" viewBox="0 0 505.3 100" role="img" aria-label="Mazalit"><g transform="translate(-197.25 -64.30) scale(0.9153)"><path fill="#1E3050" fill-rule="evenodd" d="M215.5 101.0 L261.5 147.8 L263.5 148.8 L270.5 141.0 L230.8 101.0 L248.5 82.0 L250.5 81.2 L336.5 81.2 L353.0 97.2 L367.0 97.8 L367.8 96.5 L341.2 70.5 L247.2 70.2 L243.2 71.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M242.5 100.5 L255.8 114.8 L293.0 151.8 L294.0 151.8 L344.5 101.0 L333.8 89.8 L254.0 89.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M368.0 104.2 L353.2 104.2 L293.8 164.0 L275.5 146.2 L267.8 153.8 L293.8 179.5Z"/></g><g transform="translate(-213.47 -326.54) scale(1.8560)"><path fill="#1E3050" fill-rule="evenodd" d="M201.0 188.0 L201.5 218.5 L208.2 218.5 L209.0 217.8 L208.8 200.0 L209.8 200.8 L215.8 218.5 L220.8 218.0 L226.0 201.2 L227.2 200.0 L227.0 218.0 L234.8 218.5 L234.5 187.5 L224.2 187.8 L218.2 206.5 L217.0 205.8 L211.5 187.8 L204.2 187.2Z"/><path fill="#1E3050" fill-rule="evenodd" d="M248.5 187.5 L237.2 218.5 L245.2 218.5 L247.8 213.2 L256.5 213.2 L258.8 218.2 L266.5 218.5 L266.5 216.5 L255.8 187.8Z M251.8 198.5 L253.0 199.8 L255.0 205.8 L254.2 207.0 L249.2 206.5Z"/><path fill="#1E3050" fill-rule="evenodd" d="M292.2 187.5 L268.2 188.0 L268.8 193.8 L281.2 193.8 L282.0 194.5 L268.2 215.0 L268.8 218.5 L292.5 218.2 L292.5 212.2 L279.8 212.2 L279.0 211.5 L292.5 191.8Z"/><path fill="#1E3050" fill-rule="evenodd" d="M305.5 187.5 L294.2 218.2 L302.0 218.5 L304.5 213.2 L313.2 213.2 L314.5 214.5 L315.5 218.2 L323.5 218.5 L323.5 216.5 L312.5 187.5Z M309.0 198.5 L311.8 205.5 L311.0 207.0 L307.0 207.0 L306.2 206.2 L307.8 200.2Z"/><path fill="#1E3050" fill-rule="evenodd" d="M326.5 187.5 L326.2 218.2 L346.5 218.5 L346.2 212.0 L334.0 211.5 L334.0 188.2 L333.5 187.5Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M356.2 187.2 L349.8 188.0 L350.0 218.5 L357.5 218.2 L357.5 188.0Z"/><path fill="#3F86E0" fill-rule="evenodd" d="M361.5 187.5 L361.5 193.8 L369.2 193.8 L370.0 194.8 L370.2 218.2 L377.5 218.5 L377.8 194.8 L378.8 193.8 L386.8 193.8 L387.2 188.0Z"/></g></svg><p class="warn">Failure to repay the loan may result in default interest charges and enforcement proceedings.</p>
+<div class="bottom"><p>VAT Bridge is provided by MDPS, part of <a href="https://mazalit.com/">Mazalit</a>, a licensed credit provider. Subject to review and approval.</p><p><a href="legal/privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="legal/terms.html">Terms of use</a> &nbsp;·&nbsp; <a href="legal/accessibility.html">Accessibility</a></p></div></div></footer>
+
+<div class="pill" id="pill" aria-hidden="true"><div class="tt">The state owes you<b class="num hookAmt">₪180,000</b></div><a class="btn" href="#request">Request</a></div>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+const fmt=n=>Math.round(n).toLocaleString('en-US'), digits=s=>Number(String(s).replace(/[^\d]/g,''))||0, clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+// headline words
+document.querySelectorAll('h1').forEach(h=>{let i=0;h.innerHTML=h.innerHTML.split('<br>').map(p=>p.replace(/(<em>)?([^<>\s]+)(<\/em>)?/g,(m,a,w,b)=>(a?'<em>':'')+'<span class="w" style="animation-delay:'+(0.35+i++*0.09)+'s">'+w+'</span>'+(b?'</em>':''))).join('<br>')});
+function countTo(el,target,dur,pre){const from=digits(el.textContent),t0=performance.now();const step=now=>{const k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,4);el.textContent=(pre||'')+fmt(from+(target-from)*e);if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+// one amount everywhere
+const hooks=document.querySelectorAll('.hookAmt'), amt=document.getElementById('amt');let refund=180000;
+hooks.forEach(h=>h.textContent='₪0');setTimeout(()=>hooks.forEach(h=>countTo(h,180000,1400,'₪')),1500);
+amt.addEventListener('input',()=>{const v=digits(amt.value);amt.value=v?fmt(v):'';refund=v;hooks.forEach(h=>countTo(h,v,500,'₪'))});
+amt.addEventListener('blur',()=>{if(!refund){refund=180000;amt.value='180,000';hooks.forEach(h=>countTo(h,180000,500,'₪'))}});
+document.getElementById('heroCta').addEventListener('click',()=>{if(refund)document.getElementById('f-amount').value=fmt(refund)});
+// cards: shine once when visible, tilt with the pointer
+document.querySelectorAll('.card').forEach(c=>{const st=c.closest('.stage')||c;let ready=false;setTimeout(()=>ready=true,2300);
+ if(fine&&!reduce){st.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--gx',(x*100)+'%');c.style.setProperty('--gy',(y*100)+'%');if(ready&&!c.closest('.mini'))c.style.transform=`rotateY(${(x-.5)*22}deg) rotateX(${(.5-y)*16}deg) translateZ(10px)`});st.addEventListener('pointerleave',()=>{if(ready)c.style.transform=''})}});
+if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('shine'),e.target.id==='card'?1900:300)}}),{threshold:.5}).observe && document.querySelectorAll('.card').forEach(c=>new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>c.classList.add('shine'),c.id==='card'?1900:300);o.disconnect()}}),{threshold:.5}).observe(c));
+// reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv, .tiles, .in').forEach(el=>{el.classList.remove('in');io.observe(el)});
+// dates
+const today=new Date(), filed=new Date(today.getFullYear(),today.getMonth()-(today.getDate()<15?1:0),15), add=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
+const ds=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'long'}), dsh=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+document.getElementById('jFiled').textContent=ds(filed);document.getElementById('jsub').dataset.a='By law, the state pays between '+ds(add(filed,30))+' and '+ds(add(filed,90))+'.';
+document.getElementById('l0').textContent=dsh(filed);document.getElementById('l1').textContent=dsh(add(filed,30));document.getElementById('l2').textContent=dsh(add(filed,90));
+// journey: scroll drives the card along the rail
+const J=document.getElementById('journey'),mini=document.getElementById('mini'),railfill=document.getElementById('railfill'),railblue=document.getElementById('railblue'),badge=document.getElementById('badge'),dayn=document.getElementById('dayn'),jsub=document.getElementById('jsub'),stops=[0,1,2].map(i=>document.getElementById('s'+i));
+const subs=[()=>jsub.dataset.a,()=>'Without VAT Bridge, your money sits with the state.',()=>'With VAT Bridge, MDPS pays you after approval. The state then repays MDPS.'];
+let lastPhase=-1;
+function journeyFrame(){const r=J.getBoundingClientRect(),total=r.height-innerHeight,p=clamp(-r.top/total,0,1);
+ // phase A (0-.55): card travels from day 15 (22%) towards day 105 (96%) slowly: the wait. phase B (.55-1): rewind to VAT Bridge: card comes back to 30% with badge
+ let x,day,phase;
+ const far=innerWidth<640?78:96;if(p<.55){const k=p/.55;x=22+(far-22)*k;day=Math.round(15+90*k);phase=k<.08?0:1;railfill.style.width=(74*k)+'%';railblue.style.width='0';badge.classList.remove('on');document.getElementById('lb').classList.remove('on')}
+ else{const k=(p-.55)/.45,e=1-Math.pow(1-k,3);x=far-(far-30)*e;day=Math.round(105-(105-15)*e);phase=2;railblue.style.width=(8*e)+'%';badge.classList.toggle('on',k>.85);document.getElementById('lb').classList.toggle('on',k>.5)}
+ mini.style.left=x+'%';dayn.textContent=day;
+ stops[0].classList.toggle('on',true);stops[1].classList.toggle('on',p>=.55*30/90&&p<.55);stops[2].classList.toggle('on',p>=.55&&p<.6);
+ if(phase!==lastPhase){jsub.style.opacity=0;setTimeout(()=>{jsub.textContent=subs[phase]();jsub.style.opacity=1},200);lastPhase=phase}
+}
+// chrome
+const nav=document.getElementById('nav'),progress=document.getElementById('progress'),pill=document.getElementById('pill'),hero=document.getElementById('hero');
+function chrome(){const h=document.documentElement;nav.classList.toggle('solid',h.scrollTop>24);progress.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';pill.classList.toggle('on',hero.getBoundingClientRect().bottom<0)}
+let tick=false;function onScroll(){if(tick)return;tick=true;requestAnimationFrame(()=>{chrome();journeyFrame();tick=false})}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+// form
+// Form delivery. FORM_TO is the address that receives requests (an MDPS/Mazalit address). Empty = draft mode.
+const FORM_TO='';
+const form=document.getElementById('requestForm'),msg=document.getElementById('formMsg'),sendBtn=form.querySelector('button[type=submit]');
+form.addEventListener('submit',async e=>{e.preventDefault();msg.className='msg';msg.textContent='';
+ const bad=[...form.querySelectorAll('[required]')].find(el=>el.type==='checkbox'?!el.checked:!el.value.trim()||!el.checkValidity());
+ if(bad){msg.className='msg warn';msg.textContent='Please fill in all required fields and accept the privacy policy.';bad.focus();return}
+ if(form.elements['_honey'].value)return;
+ if(!FORM_TO){msg.className='msg warn';msg.textContent='Draft version: the form is not connected yet, so your request was not sent.';return}
+ sendBtn.disabled=true;const fd=new FormData(form);fd.set('Consent','yes');fd.set('_replyto',fd.get('Email'));
+ try{const res=await fetch('https://formsubmit.co/ajax/'+FORM_TO,{method:'POST',headers:{'Accept':'application/json'},body:fd});const j=await res.json().catch(()=>({}));if(!res.ok||j.success===false||j.success==='false')throw new Error(j.message||res.status);
+  form.reset();msg.className='msg ok';msg.textContent='Request received. An advisor will contact you shortly.'}
+ catch(err){const body=[...fd.entries()].filter(([k])=>!k.startsWith('_')).map(([k,v])=>k+': '+v).join('\n');msg.className='msg warn';msg.innerHTML='Sending failed. <a href="mailto:'+FORM_TO+'?subject='+encodeURIComponent('VAT Bridge · new request')+'&body='+encodeURIComponent(body)+'">Send it by email instead</a>.'}
+ finally{sendBtn.disabled=false}});
+</script></body></html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://2jxj5gckqx-dot.github.io/meridian-business-db/sitemap.xml
