@@ -13,3 +13,9 @@ mark{background:#FFF1BF;color:#5A4300;padding:0 4px;border-radius:3px;font-weigh
 .notice{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:14px 16px;font-size:14px;margin:20px 0 8px}
 footer{border-top:1px solid var(--line);font-size:12px;color:var(--muted)}footer .wrap{padding:24px clamp(20px,4vw,48px) 40px}footer .warn{font-weight:600;color:var(--navy);font-size:13px}footer a{color:var(--navy)}
 @media(max-width:640px){.nav{height:60px}.mdps .lk{height:20px}.by span{display:none}}
+.lang{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13px;font-weight:600;color:var(--navy);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 12px;cursor:pointer;margin-inline-end:14px}.lang:hover{background:var(--soft)}.lang svg{width:18px;height:18px}
+.nav{direction:ltr}.nav .lang{order:0}.nav .logo{order:1;margin-right:auto}.nav .btn{order:3}
+html[dir=rtl] .nav .logo{order:3;margin-right:0}html[dir=rtl] .nav .btn{order:1;margin-right:auto}
+html[dir=rtl] .by{padding-left:0;padding-right:12px;border-left:0;border-right:1px solid var(--line)}
+html[dir=rtl] .notice{border-left:1px solid var(--line);border-right:4px solid var(--blue)}html[dir=rtl] ul{padding-left:0;padding-right:20px}
+@media(max-width:640px){.lang span{display:none}.lang{padding:8px}}
