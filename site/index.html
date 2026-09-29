@@ -26,11 +26,11 @@ h1{font-size:clamp(40px,5.6vw,80px)}h2{font-size:clamp(32px,4.4vw,64px)}
 .lang{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13px;font-weight:600;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 12px;cursor:pointer;transition:background .3s,border-color .3s}.lang:hover{background:rgba(255,255,255,.1);border-color:#fff}.lang svg{width:18px;height:18px}
 .nav{direction:ltr}.nav .lang{order:0;margin-right:14px}.nav .logo{order:1;margin-right:auto}.nav .btn{order:3}
 html[dir=rtl] .nav .logo{order:3;margin-right:0;margin-left:0}html[dir=rtl] .nav .btn{order:1;margin-right:auto}
-html[dir=rtl] .track,html[dir=rtl] .card{direction:ltr}html[dir=rtl] .card .n,html[dir=rtl] .card .f,html[dir=rtl] .card .t{direction:rtl}
+html[dir=rtl] .card{direction:ltr}html[dir=rtl] .card .n,html[dir=rtl] .card .f,html[dir=rtl] .card .t{direction:rtl}
 html[dir=rtl] .by{padding-left:0;padding-right:14px;border-left:0;border-right:1px solid rgba(255,255,255,.25)}
 html[dir=rtl] .cta{align-items:flex-start}html[dir=rtl] .amtin input{text-align:right}
 html[dir=rtl] .btn .arr svg{transform:scaleX(-1)}html[dir=rtl] .btn .arr svg+svg{transform:scaleX(-1) translate(-120%,120%)}html[dir=rtl] .btn:hover .arr svg{transform:scaleX(-1) translate(120%,-120%)}html[dir=rtl] .btn:hover .arr svg+svg{transform:scaleX(-1)}
-html[dir=rtl] .dayc{left:auto;right:0;text-align:right}html[dir=rtl] .badge,html[dir=rtl] .slab,html[dir=rtl] .journey .sub{direction:rtl}
+html[dir=rtl] .badge,html[dir=rtl] .compare .sub{direction:rtl}
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--cyan);transform-origin:0 50%;transform:scaleX(0);z-index:51}
 
 /* the card */
@@ -67,25 +67,29 @@ h1 .w{display:inline-block;opacity:0;transform:translateY(.5em) rotate(2deg);ani
 .scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:22px;height:36px;border:2px solid rgba(255,255,255,.3);border-radius:12px;opacity:0;animation:fade 1s ease 2s forwards}.scrollcue::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--cyan);animation:cue 1.6s ease-in-out infinite}
 @keyframes cue{50%{transform:translateY(12px);opacity:.3}}
 
-/* journey: the card travels through time as you scroll */
-.journey{position:relative;height:320svh}
-.journey .sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.journey h2{text-align:center;margin-bottom:8px}
-.journey .sub{text-align:center;color:var(--on-dark-muted);font-size:clamp(15px,1.4vw,18px);min-height:1.6em;transition:opacity .4s}
-.track{position:relative;height:300px;margin-top:150px}
-.rail{position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,.18)}
-.railfill{position:absolute;left:0;top:50%;height:2px;width:0;background:#fff}
-.railblue{position:absolute;top:calc(50% + 14px);height:3px;width:0;background:var(--mint);box-shadow:0 0 16px rgba(129,255,236,.6);left:22%}
-.stop{position:absolute;top:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid #fff;transition:background .3s,transform .3s}
-.stop.on{background:#fff;transform:translate(-50%,-50%) scale(1.3)}
-.stop.dash{border-style:dashed}
-.slab{position:absolute;top:calc(50% + 34px);transform:translateX(-50%);text-align:center;font-size:12px;color:var(--on-dark-muted);white-space:nowrap;line-height:1.35}.slab b{display:block;color:#fff;font-size:13px;font-weight:600}
-.slab.blue b{color:var(--mint)}.slab.blue{opacity:0;transition:opacity .4s}.slab.blue.on{opacity:1}.slab.first{transform:none;text-align:left}.slab.last{transform:translateX(-100%);text-align:right}#lb{transform:none;text-align:left;padding-left:6px}
-.journey .mini{position:absolute;top:50%;left:0;width:300px;transform:translate(-50%,-50%) translateY(-120px);z-index:2}
-.journey .mini .stage{max-width:300px}.journey .mini .card{box-shadow:0 30px 60px -24px rgba(30,48,80,.6)}
-.badge{position:absolute;right:-10px;top:-14px;background:var(--mint);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:6px;transform:rotate(-4deg) scale(0);transition:transform .5s cubic-bezier(.2,1.4,.4,1);box-shadow:0 10px 24px -8px rgba(129,255,236,.7)}
-.badge.on{transform:rotate(-4deg) scale(1)}
-.dayc{position:absolute;left:0;top:-118px;text-align:left;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-muted);font-weight:600;}.dayc b{display:block;font-size:44px;letter-spacing:-.03em;color:#fff;font-weight:800;line-height:1}
+/* compare: drag the handle, same card, two speeds */
+.compare{padding:clamp(80px,10vw,140px) 0}
+.compare h2{text-align:center}.compare .sub{text-align:center;color:var(--on-dark-muted);font-size:clamp(15px,1.4vw,18px);margin-top:10px}
+.cmp{position:relative;margin:48px auto 0;max-width:1100px;height:440px;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.14);user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:ew-resize}
+.side{position:absolute;inset:0;padding:40px 44px}.side.l{background:rgba(255,255,255,.04)}
+.side.r{background:linear-gradient(135deg,#17418F,#0F2D6F 60%,#0B2461);clip-path:inset(0 0 0 var(--x,58%))}.side.r::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(129,255,236,.16),rgba(129,255,236,.03));pointer-events:none}
+.side .h{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--on-dark-muted)}.side.r .h{color:var(--mint)}
+.side .big{font-size:clamp(34px,4.4vw,56px);font-weight:800;letter-spacing:-.03em;margin:10px 0 8px;line-height:1}.side.r .big{color:var(--mint)}
+.side p{margin:0;color:var(--on-dark-muted);font-size:15px;max-width:34ch;line-height:1.5}
+.side.r .txt{margin-left:60%}.side.l .txt{max-width:40%}
+.meter{display:flex;align-items:center;gap:18px;margin-top:22px}
+.clock{position:relative;width:64px;height:64px;flex:none;border-radius:50%;border:3px solid rgba(255,255,255,.18)}.clock::before{content:"";position:absolute;left:50%;top:50%;width:3px;height:24px;margin:-24px 0 0 -1.5px;border-radius:2px;background:#fff;transform-origin:50% 100%;animation:tick 6s linear infinite}.clock::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:#fff}
+@keyframes tick{to{transform:rotate(360deg)}}
+.days{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);font-weight:600}.days b{display:block;font-size:34px;letter-spacing:-.02em;color:#fff;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.cmp .cardwrap{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);width:300px}
+.side.l .card{filter:saturate(.35) brightness(.7)}
+.side.r .card{box-shadow:0 30px 60px -24px rgba(0,10,40,.8),0 0 0 1px rgba(129,255,236,.4),0 0 40px -10px rgba(129,255,236,.6)}
+.cmp .badge{transform:rotate(-4deg) scale(0);transition:transform .5s cubic-bezier(.2,1.4,.4,1)}.cmp.in .badge{transform:rotate(-4deg) scale(1);transition-delay:1.2s}
+.handle{position:absolute;left:var(--x,58%);top:0;bottom:0;width:2px;background:#fff;transform:translateX(-50%);box-shadow:0 0 20px rgba(255,255,255,.4)}
+.handle i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.45);display:grid;place-items:center;transition:transform .3s var(--ease)}.cmp.on .handle i{transform:translate(-50%,-50%) scale(1.1)}.handle svg{width:22px;height:22px;color:var(--navy)}
+.compare .hint{text-align:center;margin-top:16px;font-size:13px;color:var(--on-dark-muted)}
+html[dir=rtl] .cmp{direction:ltr}html[dir=rtl] .side .txt,html[dir=rtl] .side .txt p{direction:rtl;text-align:right}html[dir=rtl] .cmp .card .n,html[dir=rtl] .cmp .card .f{direction:rtl}
+@media(max-width:760px){.cmp{height:540px;margin-top:32px;--x:50%}.side{padding:24px 18px}.side.r .txt{margin-left:54%}.side.l .txt{max-width:44%}.side .big{font-size:30px}.meter{display:none}.cmp .cardwrap{bottom:22px;width:230px}.side p{font-size:13px}.side .h{font-size:11px}.cmp .badge{font-size:9px;padding:6px 9px}}
 
 /* steps: four small cards flip in */
 .steps{padding:clamp(80px,10vw,140px) 0;background:#fff}
@@ -137,7 +141,7 @@ footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10p
 @media(max-width:1000px){.hero{grid-template-columns:1fr;gap:40px;padding-top:110px}.hero .stage{justify-self:start}.tiles{grid-template-columns:1fr 1fr}.request .grid{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}.request .stage{display:none}}
 @media(max-width:640px){.nav{height:64px}.mdps .lk{height:22px}.by{padding-left:8px}.by b{font-size:12px}.by span{font-size:9px}.nav .btn .long{display:none}.nav .btn{padding:9px 12px 9px 14px}
 .card{width:100%}.card .n{font-size:26px}.tiles{grid-template-columns:1fr}.tile{min-height:0}.form{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}.pill{display:flex}body{padding-bottom:76px}
-.journey{height:260svh}.track{height:240px;margin-top:120px}.journey .mini{width:200px}.journey .mini .card{width:200px}.journey .mini{transform:translate(-50%,-50%) translateY(-92px)}#lb{left:44%!important}.slab.first{font-size:10px}.slab{font-size:10px}.slab b{font-size:11px}.slab.mid{display:none}.dayc{top:-100px}.dayc b{font-size:32px}.scrollcue{display:none}}
+.scrollcue{display:none}}
 .nav .btn .short{display:none}@media(max-width:640px){.nav .btn .short{display:inline}.lang span{display:none}.lang{padding:8px}.nav .lang{margin-right:8px}}
 </style></head><body>
 <div class="progress" id="progress"></div>
@@ -151,20 +155,19 @@ footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10p
   <div class="scrollcue" aria-hidden="true"></div>
 </section>
 
-<section class="journey dark" id="journey" aria-label="When the money arrives">
-  <div class="sticky"><div class="wrap">
-    <h2 id="jh"><span data-i="filedOn">Filed on</span> <em id="jFiled">15 September</em><span class="dot" dir="auto">&#8207;.</span></h2>
-    <p class="sub" id="jsub">By law, the state pays between 15 October and 14 December.</p>
-    <div class="track" id="track">
-      <div class="dayc" id="dayc"><span data-i="day">Day</span><b id="dayn">0</b></div>
-      <div class="rail"></div><div class="railfill" id="railfill"></div><div class="railblue" id="railblue"></div>
-      <div class="stop on" style="left:22%" id="s0"></div><div class="slab first" style="left:22%"><b id="l0">15 Sep</b><span data-i="youFile">You file</span></div>
-      <div class="stop" style="left:54%" id="s1"></div><div class="slab mid" style="left:54%"><b id="l1">15 Oct</b><span data-i="d30">30 days · the state pays</span></div>
-      <div class="stop dash" style="left:96%" id="s2"></div><div class="slab last" style="left:96%"><b id="l2">14 Dec</b><span data-i="d90">90 days · if they audit</span></div>
-      <div class="slab blue" style="left:30%;top:calc(50% + 34px)" id="lb"><b data-i="withVB">With VAT Bridge</b><span data-i="afterApproval">after approval</span></div>
-      <div class="mini" id="mini"><div class="stage"><div class="card " id="card2"><svg class="lines" viewBox="0 0 540 336" preserveAspectRatio="none"><path d="M0 250 C120 200 220 320 340 260 S480 180 540 220"/><path d="M0 290 C140 240 240 340 360 290 S500 220 540 250"/></svg><div class="glare"></div><span class="t">VAT Bridge</span><svg class="mk" viewBox="24.00 45.00 64.88 64.88" aria-hidden="true"><path class="c-white" fill="#FFFFFF" fill-rule="evenodd" d="M24.12 102.12 24.50 102.38 25.50 100.88 25.88 100.00 26.00 98.50 27.75 95.38 28.00 93.50 29.62 91.62 29.88 90.75 30.62 89.62 34.12 82.25 36.62 79.62 37.12 78.25 38.62 76.62 39.12 75.25 43.62 70.62 44.12 69.25 48.25 65.12 49.62 64.62 54.25 60.12 55.62 59.62 58.25 57.12 59.62 56.62 61.25 55.12 62.12 54.88 63.25 54.12 64.12 53.88 65.25 53.12 66.12 52.88 67.25 52.12 74.62 48.62 75.50 48.00 77.00 47.88 78.50 47.00 80.38 46.75 82.00 45.88 82.38 45.38 81.88 45.00 24.50 45.12 24.00 45.88Z"/><path class="c-mint" fill="#A1FCEB" fill-rule="evenodd" d="M73.12 55.62 72.75 55.38 72.12 55.38 69.12 57.00 68.25 57.25 67.25 58.25 67.00 58.88 66.88 87.38 66.00 88.00 37.88 88.00 37.25 88.25 36.25 89.25 36.00 90.12 34.12 93.50 34.12 94.38 34.50 94.75 72.00 94.88 72.62 94.62 73.62 93.62 73.88 93.00 73.88 56.75Z"/><path class="c-blue" fill="#3376F6" fill-rule="evenodd" d="M87.38 50.12 86.50 50.12 85.00 51.00 82.50 51.12 81.25 52.25 81.00 52.88 80.88 102.38 80.00 103.00 30.88 103.00 30.12 103.50 30.00 104.12 29.00 105.88 29.00 108.00 29.50 108.75 87.00 108.88 87.75 108.38 87.88 50.88Z"/></svg><span class="n num hookAmt">₪180,000</span><span class="f" data-i="cardFoot">Owed by the state · advanced by MDPS</span></div></div><div class="badge" id="badge" data-i="advanced">Advanced by MDPS</div></div>
+<section class="compare dark" id="journey" aria-label="Same refund, two speeds">
+  <div class="wrap">
+    <h2 class="rv" id="h2cmp">Same refund. <em>Two speeds.</em></h2>
+    <p class="sub rv" data-i="cSub">Drag the handle: the same refund, two timelines.</p>
+    <div class="cmp rv" id="cmp">
+      <div class="side l"><div class="txt"><div class="h" data-i="cWithout">Without VAT Bridge</div><div class="big" data-i="cDays">30 to 90 days</div><p data-i="cWithoutP">By law, the state pays within 30 days of filing, or up to 90 if it audits your return. Until then, your money sits with the state.</p><div class="meter"><div class="clock"></div><div class="days"><span data-i="cWaiting">Still waiting</span><b id="cmpDays">0</b></div></div></div>
+        <div class="cardwrap"><div class="card"><span class="t">VAT Bridge</span><svg class="mk" viewBox="24.00 45.00 64.88 64.88" aria-hidden="true"><path class="c-white" fill="#FFFFFF" fill-rule="evenodd" d="M24.12 102.12 24.50 102.38 25.50 100.88 25.88 100.00 26.00 98.50 27.75 95.38 28.00 93.50 29.62 91.62 29.88 90.75 30.62 89.62 34.12 82.25 36.62 79.62 37.12 78.25 38.62 76.62 39.12 75.25 43.62 70.62 44.12 69.25 48.25 65.12 49.62 64.62 54.25 60.12 55.62 59.62 58.25 57.12 59.62 56.62 61.25 55.12 62.12 54.88 63.25 54.12 64.12 53.88 65.25 53.12 66.12 52.88 67.25 52.12 74.62 48.62 75.50 48.00 77.00 47.88 78.50 47.00 80.38 46.75 82.00 45.88 82.38 45.38 81.88 45.00 24.50 45.12 24.00 45.88Z"/><path class="c-mint" fill="#A1FCEB" fill-rule="evenodd" d="M73.12 55.62 72.75 55.38 72.12 55.38 69.12 57.00 68.25 57.25 67.25 58.25 67.00 58.88 66.88 87.38 66.00 88.00 37.88 88.00 37.25 88.25 36.25 89.25 36.00 90.12 34.12 93.50 34.12 94.38 34.50 94.75 72.00 94.88 72.62 94.62 73.62 93.62 73.88 93.00 73.88 56.75Z"/><path class="c-blue" fill="#3376F6" fill-rule="evenodd" d="M87.38 50.12 86.50 50.12 85.00 51.00 82.50 51.12 81.25 52.25 81.00 52.88 80.88 102.38 80.00 103.00 30.88 103.00 30.12 103.50 30.00 104.12 29.00 105.88 29.00 108.00 29.50 108.75 87.00 108.88 87.75 108.38 87.88 50.88Z"/></svg><span class="n num hookAmt">₪180,000</span><span class="f" data-i="cardWait">Owed by the state · waiting</span></div></div></div>
+      <div class="side r"><div class="txt"><div class="h" data-i="cWith">With VAT Bridge</div><div class="big" data-i="cAfter">After approval</div><p data-i="cWithP">You request the day you file. MDPS reviews your return and pays you. The state's refund then repays MDPS. You keep filing as usual.</p></div>
+        <div class="cardwrap"><div class="card"><span class="t">VAT Bridge</span><svg class="mk" viewBox="24.00 45.00 64.88 64.88" aria-hidden="true"><path class="c-white" fill="#FFFFFF" fill-rule="evenodd" d="M24.12 102.12 24.50 102.38 25.50 100.88 25.88 100.00 26.00 98.50 27.75 95.38 28.00 93.50 29.62 91.62 29.88 90.75 30.62 89.62 34.12 82.25 36.62 79.62 37.12 78.25 38.62 76.62 39.12 75.25 43.62 70.62 44.12 69.25 48.25 65.12 49.62 64.62 54.25 60.12 55.62 59.62 58.25 57.12 59.62 56.62 61.25 55.12 62.12 54.88 63.25 54.12 64.12 53.88 65.25 53.12 66.12 52.88 67.25 52.12 74.62 48.62 75.50 48.00 77.00 47.88 78.50 47.00 80.38 46.75 82.00 45.88 82.38 45.38 81.88 45.00 24.50 45.12 24.00 45.88Z"/><path class="c-mint" fill="#A1FCEB" fill-rule="evenodd" d="M73.12 55.62 72.75 55.38 72.12 55.38 69.12 57.00 68.25 57.25 67.25 58.25 67.00 58.88 66.88 87.38 66.00 88.00 37.88 88.00 37.25 88.25 36.25 89.25 36.00 90.12 34.12 93.50 34.12 94.38 34.50 94.75 72.00 94.88 72.62 94.62 73.62 93.62 73.88 93.00 73.88 56.75Z"/><path class="c-blue" fill="#3376F6" fill-rule="evenodd" d="M87.38 50.12 86.50 50.12 85.00 51.00 82.50 51.12 81.25 52.25 81.00 52.88 80.88 102.38 80.00 103.00 30.88 103.00 30.12 103.50 30.00 104.12 29.00 105.88 29.00 108.00 29.50 108.75 87.00 108.88 87.75 108.38 87.88 50.88Z"/></svg><span class="n num" id="cmpAmt">₪0</span><span class="f" data-i="cardFoot">Owed by the state · advanced by MDPS</span><span class="badge" data-i="advanced">Advanced by MDPS</span></div></div></div>
+      <div class="handle"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></i></div>
     </div>
-  </div></div>
+    <p class="hint rv" data-i="cHint">Drag the handle to compare.</p>
+  </div>
 </section>
 
 <section class="steps" id="how"><div class="wrap">
@@ -224,8 +227,7 @@ footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10p
 // ---- languages: one page, one language at a time
 const I18N={
  en:{dir:'ltr',title:'VAT Bridge · MDPS',other:'עברית',by:'MDPS · part of Mazalit',cta:'Request an advance',ctaShort:'Request',owes:'The state owes you',
-  h1:'Your refund,<br>on your account<span class="dot">.</span>',filedOn:'Filed on',day:'Day',youFile:'You file',d30:'30 days · the state pays',d90:'90 days · if they audit',withVB:'With VAT Bridge',afterApproval:'after approval',advanced:'Advanced by MDPS',
-  subA:(a,b)=>'By law, the state pays between '+a+' and '+b+'.',subB:'Without VAT Bridge, your money sits with the state.',subC:'With VAT Bridge, MDPS pays you after approval. The state then repays MDPS.',
+  h1:'Your refund,<br>on your account<span class="dot">.</span>',advanced:'Advanced by MDPS',h2cmp:'Same refund. <em>Two speeds.</em>',cSub:'Drag the handle: the same refund, two timelines.',cWithout:'Without VAT Bridge',cDays:'30 to 90 days',cWithoutP:'By law, the state pays within 30 days of filing, or up to 90 if it audits your return. Until then, your money sits with the state.',cWaiting:'Still waiting',dayWord:'days',cardWait:'Owed by the state · waiting',cWith:'With VAT Bridge',cAfter:'After approval',cWithP:'You request the day you file. MDPS reviews your return and pays you. The state\'s refund then repays MDPS. You keep filing as usual.',cHint:'Drag the handle to compare.',fDates:'Two speeds',
   h2steps:'Four steps. You do <em>two.</em>',s1:'You file your VAT return',s2:'You send us a request',s3:'We check it and pay you',s4:'The state pays the refund, which repays MDPS',you:'You',state:'The state',
   lender:'<b>MDPS</b>, part of Mazalit, holds an extended credit-provider licence (no. 68141) from the Capital Market, Insurance and Savings Authority.',
   h2req:'Request <em>an advance.</em>',advisor:'An advisor will contact you.',fCompany:'Business name',fId:'Company number',fName:'Contact name',fPhone:'Phone',fEmail:'Email',fAmount:'Refund on your return (optional)',
@@ -233,10 +235,9 @@ const I18N={
   mReq:'Please fill in all required fields and accept the privacy policy.',mDraft:'Draft version: the form is not connected yet, so your request was not sent.',mOk:'Request received. An advisor will contact you shortly.',mFail:'Sending failed.',mMail:'Send it by email instead',
   h2faq:'Before <em>you apply.</em>',q1:'What is VAT Bridge?',a1:'An advance on the VAT refund the state owes your business, provided by MDPS.',q2:'What do I need?',a2:'Your latest VAT return and your business details.',q3:'Does it change my VAT reporting?',a3:'No. You keep filing as usual.',q4:'Who is it for?',a4:'Businesses registered for VAT in Israel whose return shows a refund due. Typically exporters and importers: they pay VAT on purchases and at customs (18%), and charge little or no VAT on sales, because exports are zero-rated.',q5:'What does it cost?',a5:'It depends on the amount and on when the state pays. You receive the terms in writing before you sign anything, and nothing is due before that.',q6:'What if the state audits my return?',a6:'Then the state may take up to 90 days instead of 30. That wait is exactly what VAT Bridge is there for. If the refund is delayed or reduced, your agreement sets out what happens.',
   warn:'Failure to repay the loan may result in default interest charges and enforcement proceedings.',provider:'VAT Bridge is provided by MDPS Financial Services, part of <a href="https://mazalit.com/">Mazalit</a>, a licensed credit provider. Subject to review and approval.',
-  lPrivacy:'Privacy policy',lTerms:'Terms of use',lAccess:'Accessibility statement',cardFoot:'Owed by the state · advanced by MDPS',locale:'en-GB',fTag:'VAT Bridge · MDPS Financial Services, part of Mazalit.',fMail:'Email:',fPhone:'Phone:',fNavT:'Quick links',fHome:'Home',fDates:'Your dates',fHow:'How it works',fFaq:'FAQ',fLegalT:'Legal',fMaz:'About Mazalit',fLicT:'Licensed by the Capital Market, Insurance and Savings Authority',fLic:'MDPS operates under the approval and supervision of the Capital Market, Insurance and Savings Authority and holds an extended licence to provide credit (no. 68141) and an extended licence to provide services in financial assets (no. 68143).'},
+  lPrivacy:'Privacy policy',lTerms:'Terms of use',lAccess:'Accessibility statement',cardFoot:'Owed by the state · advanced by MDPS',locale:'en-GB',fTag:'VAT Bridge · MDPS Financial Services, part of Mazalit.',fMail:'Email:',fPhone:'Phone:',fNavT:'Quick links',fHome:'Home',fHow:'How it works',fFaq:'FAQ',fLegalT:'Legal',fMaz:'About Mazalit',fLicT:'Licensed by the Capital Market, Insurance and Savings Authority',fLic:'MDPS operates under the approval and supervision of the Capital Market, Insurance and Savings Authority and holds an extended licence to provide credit (no. 68141) and an extended licence to provide services in financial assets (no. 68143).'},
  he:{dir:'rtl',title:'VAT Bridge · MDPS',other:'English',by:'MDPS · חלק מקבוצת מזלית',cta:'בקשו מקדמה',ctaShort:'בקשה',owes:'המדינה חייבת לכם',
-  h1:'ההחזר שלכם,<br>בחשבון שלכם<span class="dot">&#8207;.</span>',filedOn:'הגשתם דוח ב־',day:'יום',youFile:'אתם מגישים',d30:'30 יום · המדינה משלמת',d90:'90 יום · אם יש ביקורת',withVB:'עם VAT Bridge',afterApproval:'לאחר האישור',advanced:'מקדמה מ־MDPS',
-  subA:(a,b)=>'על פי חוק, המדינה משלמת בין '+a+' ל־'+b+'.',subB:'בלי VAT Bridge, הכסף שלכם יושב אצל המדינה.',subC:'עם VAT Bridge, MDPS משלמת לכם לאחר האישור. המדינה מחזירה אחר כך ל־MDPS.',
+  h1:'ההחזר שלכם,<br>בחשבון שלכם<span class="dot">&#8207;.</span>',advanced:'מקדמה מ־MDPS',h2cmp:'אותו החזר. <em>שתי מהירויות.</em>',cSub:'גררו את הידית: אותו החזר, שני לוחות זמנים.',cWithout:'בלי VAT Bridge',cDays:'30 עד 90 יום',cWithoutP:'על פי חוק, המדינה משלמת תוך 30 יום מהגשת הדוח, או עד 90 יום אם יש ביקורת. עד אז הכסף שלכם יושב אצל המדינה.',cWaiting:'עדיין מחכים',dayWord:'יום',cardWait:'המדינה חייבת · ממתין',cWith:'עם VAT Bridge',cAfter:'לאחר האישור',cWithP:'אתם מבקשים ביום ההגשה. MDPS בודקת את הדוח ומשלמת לכם. ההחזר מהמדינה מחזיר אחר כך ל־MDPS. ממשיכים לדווח כרגיל.',cHint:'גררו את הידית כדי להשוות.',fDates:'שתי מהירויות',
   h2steps:'ארבעה שלבים. אתם עושים <em>שניים.</em>',s1:'אתם מגישים את דוח המע״מ',s2:'אתם שולחים לנו בקשה',s3:'אנחנו בודקים ומשלמים לכם',s4:'המדינה משלמת את ההחזר, שמחזיר ל־MDPS',you:'אתם',state:'המדינה',
   lender:'<b>MDPS</b>, חלק מקבוצת מזלית, מחזיקה ברישיון מורחב למתן אשראי (מ.ר 68141) מרשות שוק ההון, ביטוח וחיסכון.',
   h2req:'בקשו <em>מקדמה.</em>',advisor:'יועץ ייצור אתכם קשר.',fCompany:'שם העסק',fId:'מספר חברה',fName:'שם איש קשר',fPhone:'טלפון',fEmail:'אימייל',fAmount:'ההחזר בדוח שלכם (לא חובה)',
@@ -244,14 +245,14 @@ const I18N={
   mReq:'נא למלא את כל שדות החובה ולאשר את מדיניות הפרטיות.',mDraft:'גרסת טיוטה: הטופס עדיין לא מחובר, הבקשה לא נשלחה.',mOk:'הבקשה התקבלה. יועץ ייצור אתכם קשר בקרוב.',mFail:'השליחה נכשלה.',mMail:'שלחו במייל במקום',
   h2faq:'לפני <em>שמגישים.</em>',q1:'מה זה VAT Bridge?',a1:'מקדמה על החזר המע״מ שהמדינה חייבת לעסק שלכם, מ־MDPS.',q2:'מה צריך?',a2:'דוח המע״מ האחרון שלכם ופרטי העסק.',q3:'האם זה משנה את הדיווח למע״מ?',a3:'לא. ממשיכים לדווח כרגיל.',q4:'למי זה מתאים?',a4:'לעסקים הרשומים למע״מ בישראל שהדוח שלהם מראה החזר לקבל. בדרך כלל יצואנים ויבואנים: הם משלמים מע״מ על רכישות ובמכס (18%), וגובים מעט מע״מ או בכלל לא על המכירות, כי יצוא חייב במע״מ בשיעור אפס.',q5:'כמה זה עולה?',a5:'זה תלוי בסכום ובמועד שבו המדינה משלמת. אתם מקבלים את התנאים בכתב לפני שחותמים על משהו, ושום דבר לא נדרש לפני כן.',q6:'מה קורה אם יש ביקורת על הדוח?',a6:'אז המדינה עשויה לקחת עד 90 יום במקום 30. בדיוק בשביל ההמתנה הזאת VAT Bridge קיים. אם ההחזר מתעכב או מופחת, ההסכם קובע מה קורה.',
   warn:'אי עמידה בפירעון ההלוואה עלול לגרור חיוב בריבית פיגורים והליכי הוצאה לפועל.',provider:'VAT Bridge ניתן על ידי MDPS Financial Services, חלק מקבוצת <a href="https://mazalit.com/">מזלית</a>, נותן אשראי מורשה. בכפוף לבדיקה ואישור.',
-  lPrivacy:'מדיניות פרטיות',lTerms:'תנאי שימוש',lAccess:'הצהרת נגישות',cardFoot:'המדינה חייבת · מקדמה מ־MDPS',locale:'he-IL',fTag:'VAT Bridge · MDPS Financial Services, חלק מקבוצת מזלית.',fMail:'מייל:',fPhone:'טלפון:',fNavT:'ניווט מהיר',fHome:'דף הבית',fDates:'התאריכים שלכם',fHow:'איך זה עובד',fFaq:'שאלות ותשובות',fLegalT:'משפטי',fMaz:'על מזלית',fLicT:'ברישיון רשות שוק ההון, ביטוח וחיסכון',fLic:'חברת MDPS פועלת באישור ופיקוח של רשות שוק ההון ביטוח וחיסכון ומחזיקה ברישיון מורחב למתן אשראי מ.ר – 68141 וברישיון מורחב למתן שירותים בנכס פיננסי – מ.ר 68143.'}};
+  lPrivacy:'מדיניות פרטיות',lTerms:'תנאי שימוש',lAccess:'הצהרת נגישות',cardFoot:'המדינה חייבת · מקדמה מ־MDPS',locale:'he-IL',fTag:'VAT Bridge · MDPS Financial Services, חלק מקבוצת מזלית.',fMail:'מייל:',fPhone:'טלפון:',fNavT:'ניווט מהיר',fHome:'דף הבית',fHow:'איך זה עובד',fFaq:'שאלות ותשובות',fLegalT:'משפטי',fMaz:'על מזלית',fLicT:'ברישיון רשות שוק ההון, ביטוח וחיסכון',fLic:'חברת MDPS פועלת באישור ופיקוח של רשות שוק ההון ביטוח וחיסכון ומחזיקה ברישיון מורחב למתן אשראי מ.ר – 68141 וברישיון מורחב למתן שירותים בנכס פיננסי – מ.ר 68143.'}};
 let LANG=(()=>{try{const q=new URLSearchParams(location.search).get('lang');if(q==='he'||q==='en')return q;const s=localStorage.getItem('lang');if(s==='he'||s==='en')return s}catch(e){}return /^he/i.test(navigator.language||'')?'he':'en'})();
 const T=()=>I18N[LANG];
 function applyLang(){const t=T();document.documentElement.lang=LANG;document.documentElement.dir=t.dir;document.title=t.title;
  document.querySelectorAll('[data-i]').forEach(el=>{const v=t[el.dataset.i];if(typeof v==='string')el.innerHTML=v});
- ['h1','h2steps','h2req','h2faq'].forEach(id=>{const el=document.getElementById(id);if(el&&!el.dataset.split)el.innerHTML=t[id]});
+ ['h1','h2cmp','h2steps','h2req','h2faq'].forEach(id=>{const el=document.getElementById(id);if(el&&!el.dataset.split)el.innerHTML=t[id]});
  document.getElementById('langLbl').textContent=t.other;try{localStorage.setItem('lang',LANG)}catch(e){}
- if(window.__vbReady){renderDates();lastPhase=-1;journeyFrame()}}
+ if(window.__vbReady)cSet(cx)}
 document.getElementById('langBtn').addEventListener('click',()=>{LANG=LANG==='en'?'he':'en';applyLang();const h=document.getElementById('h1');h.innerHTML=T().h1;delete h.dataset.split;splitH1()});
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
 const fmt=n=>Math.round(n).toLocaleString('en-US'), digits=s=>Number(String(s).replace(/[^\d]/g,''))||0, clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -261,7 +262,7 @@ function countTo(el,target,dur,pre){const from=digits(el.textContent),t0=perform
 // one amount everywhere
 const hooks=document.querySelectorAll('.hookAmt'), amt=document.getElementById('amt');let refund=180000;
 hooks.forEach(h=>h.textContent='₪0');setTimeout(()=>hooks.forEach(h=>countTo(h,180000,1400,'₪')),1500);
-amt.addEventListener('input',()=>{const v=digits(amt.value);amt.value=v?fmt(v):'';refund=v;hooks.forEach(h=>countTo(h,v,500,'₪'))});
+amt.addEventListener('input',()=>{const v=digits(amt.value);amt.value=v?fmt(v):'';refund=v;hooks.forEach(h=>countTo(h,v,500,'₪'));if(cStarted)countTo(document.getElementById('cmpAmt'),v,500,'₪')});
 amt.addEventListener('blur',()=>{if(!refund){refund=180000;amt.value='180,000';hooks.forEach(h=>countTo(h,180000,500,'₪'))}});
 document.getElementById('heroCta').addEventListener('click',()=>{if(refund)document.getElementById('f-amount').value=fmt(refund)});
 // cards: shine once when visible, tilt with the pointer
@@ -271,30 +272,22 @@ if('IntersectionObserver' in window)new IntersectionObserver(es=>es.forEach(e=>{
 // reveals
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.rv, .tiles, .in').forEach(el=>{el.classList.remove('in');io.observe(el)});
-// dates (language-aware)
-const today=new Date(), filed=new Date(today.getFullYear(),today.getMonth()-(today.getDate()<15?1:0),15), add=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
-const ds=d=>d.toLocaleDateString(T().locale,{day:'numeric',month:'long'}), dsh=d=>d.toLocaleDateString(T().locale,{day:'numeric',month:'short'});
-function renderDates(){document.getElementById('jFiled').textContent=ds(filed);document.getElementById('jsub').dataset.a=T().subA(ds(add(filed,30)),ds(add(filed,90)));
- document.getElementById('l0').textContent=dsh(filed);document.getElementById('l1').textContent=dsh(add(filed,30));document.getElementById('l2').textContent=dsh(add(filed,90));}
-applyLang();splitH1();
-// journey: scroll drives the card along the rail
-const J=document.getElementById('journey'),mini=document.getElementById('mini'),railfill=document.getElementById('railfill'),railblue=document.getElementById('railblue'),badge=document.getElementById('badge'),dayn=document.getElementById('dayn'),jsub=document.getElementById('jsub'),stops=[0,1,2].map(i=>document.getElementById('s'+i));
-const subs=[()=>jsub.dataset.a,()=>T().subB,()=>T().subC];
-var lastPhase=-1;
-function journeyFrame(){const r=J.getBoundingClientRect(),total=r.height-innerHeight,p=clamp(-r.top/total,0,1);
- // phase A (0-.55): card travels from day 15 (22%) towards day 105 (96%) slowly: the wait. phase B (.55-1): rewind to VAT Bridge: card comes back to 30% with badge
- let x,day,phase;
- const far=innerWidth<640?78:96;if(p<.55){const k=p/.55;x=22+(far-22)*k;day=Math.round(15+90*k);phase=k<.08?0:1;railfill.style.width=(74*k)+'%';railblue.style.width='0';badge.classList.remove('on');document.getElementById('lb').classList.remove('on')}
- else{const k=(p-.55)/.45,e=1-Math.pow(1-k,3);x=far-(far-30)*e;day=Math.round(105-(105-15)*e);phase=2;railblue.style.width=(8*e)+'%';badge.classList.toggle('on',k>.85);document.getElementById('lb').classList.toggle('on',k>.5)}
- mini.style.left=x+'%';dayn.textContent=day;
- stops[0].classList.toggle('on',true);stops[1].classList.toggle('on',p>=.55*30/90&&p<.55);stops[2].classList.toggle('on',p>=.55&&p<.6);
- if(phase!==lastPhase){jsub.style.opacity=0;setTimeout(()=>{jsub.textContent=subs[phase]();jsub.style.opacity=1},200);lastPhase=phase}
-}
+// compare: drag the handle. A demo sweep runs once when the block comes into view.
+const cmp=document.getElementById('cmp');const REST=innerWidth<=760?50:58;let cx=REST,cDrag=false,cAuto=true,cStarted=false;
+const cSet=v=>{cx=Math.max(4,Math.min(96,v));cmp.style.setProperty('--x',cx+'%');document.getElementById('cmpDays').textContent=Math.round(90*(1-(cx-4)/92))+' '+T().dayWord};
+const cFrom=e=>{const r=cmp.getBoundingClientRect();return (e.clientX-r.left)/r.width*100};
+cmp.addEventListener('pointerdown',e=>{cDrag=true;cAuto=false;cmp.classList.add('on');cmp.setPointerCapture(e.pointerId);cSet(cFrom(e))});
+cmp.addEventListener('pointermove',e=>{if(cDrag)cSet(cFrom(e))});
+['pointerup','pointercancel'].forEach(t=>cmp.addEventListener(t,()=>{cDrag=false;cmp.classList.remove('on')}));
+cmp.addEventListener('keydown',e=>{const n={ArrowLeft:-4,ArrowRight:4}[e.key];if(n){cAuto=false;cSet(cx+n);e.preventDefault()}});cmp.tabIndex=0;
+function cStart(){if(cStarted)return;cStarted=true;cSet(REST);setTimeout(()=>countTo(document.getElementById('cmpAmt'),refund||180000,1200,'₪'),600);
+ [[88,1400,900],[18,1600,2600],[REST,1200,4600]].forEach(([to,dur,at])=>setTimeout(()=>{if(!cAuto||reduce){if(reduce)cSet(REST);return}const from=cx,t0=performance.now();const step=now=>{if(!cAuto)return;const k=Math.min(1,(now-t0)/dur),e=.5-.5*Math.cos(Math.PI*k);cSet(from+(to-from)*e);if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)},at))}
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){cStart();o.disconnect()}}),{threshold:.4}).observe(cmp);
 // chrome
 const nav=document.getElementById('nav'),progress=document.getElementById('progress'),pill=document.getElementById('pill'),hero=document.getElementById('hero');
 function chrome(){const h=document.documentElement;nav.classList.toggle('solid',h.scrollTop>24);progress.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';pill.classList.toggle('on',hero.getBoundingClientRect().bottom<0)}
-let tick=false;function onScroll(){if(tick)return;tick=true;requestAnimationFrame(()=>{chrome();journeyFrame();tick=false})}
-document.getElementById('year').textContent=new Date().getFullYear();window.__vbReady=true;renderDates();addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+let tick=false;function onScroll(){if(tick)return;tick=true;requestAnimationFrame(()=>{chrome();tick=false})}
+document.getElementById('year').textContent=new Date().getFullYear();window.__vbReady=true;addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 // form
 // Form delivery. FORM_TO is the address that receives requests (an MDPS/Mazalit address). Empty = draft mode.
 const FORM_TO='';
@@ -309,4 +302,5 @@ form.addEventListener('submit',async e=>{e.preventDefault();msg.className='msg';
   form.reset();msg.className='msg ok';msg.textContent=T().mOk}
  catch(err){const body=[...fd.entries()].filter(([k])=>!k.startsWith('_')).map(([k,v])=>k+': '+v).join('\n');msg.className='msg warn';msg.innerHTML=T().mFail+' <a href="mailto:'+FORM_TO+'?subject='+encodeURIComponent('VAT Bridge · new request')+'&body='+encodeURIComponent(body)+'">'+T().mMail+'</a>.'}
  finally{sendBtn.disabled=false}});
+applyLang();splitH1();cSet(REST);
 </script></body></html>
